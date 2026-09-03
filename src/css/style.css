@@ -2,3 +2,7 @@ h1 {
     font-size: 40px;
     color: red;
 }
+.container {
+    margin-bottom: 20px;
+    margin-left: 100px;
+}
