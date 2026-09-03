@@ -1,0 +1,1 @@
+(()=>{"use strict";(()=>{const t=document.createElement("div");t.classList.add("test-div"),t.textContent="Что-то написал",document.body.append(t)})()})();
