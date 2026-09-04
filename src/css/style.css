@@ -1,8 +1,18 @@
-h1 {
-    font-size: 40px;
-    color: red;
+body {
+    padding: 20px;
 }
+
 .container {
-    margin-bottom: 20px;
-    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 100%;
+
+}
+
+.card {
+    padding: 10px;
+    background-color: gray;
+    color: red;
+    border-radius: 5px;
 }
