@@ -1,18 +1,63 @@
-body {
+@import 'normalize.css';
+
+.boards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     padding: 20px;
+    border: 5px solid black;
+}
+
+.board {
+    border: 3px solid red;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    min-width: 100%;
-
+    font-size: 20px;
+    list-style-type: none;
 }
 
 .card {
-    padding: 10px;
-    background-color: gray;
-    color: red;
+    border: 1px solid green;
     border-radius: 5px;
+    padding: 5px;
 }
+
+/*.container {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    gap: 10px;*/
+/*    list-style-type: none;*/
+/*}*/
+
+
+/*.card {*/
+/*    position: relative;*/
+/*    padding: 10px;*/
+/*    border: 2px solid #ddd;*/
+/*    border-radius: 16px;*/
+/*    background: #fff;*/
+/*    transition: 0.25s ease;*/
+/*    overflow: hidden;*/
+/*}*/
+
+/*.card.drag-over {*/
+/*    transform: translateY(-6px) scale(1.04);*/
+/*    border-color: #8b5cf6;*/
+/*    background: #faf7ff;*/
+/*    box-shadow:*/
+/*            0 0 0 3px rgba(139, 92, 246, 0.15),*/
+/*            0 15px 40px rgba(139, 92, 246, 0.25);*/
+/*}*/
+
+/*.card.drag-over::after {*/
+/*    content: '';*/
+/*    position: absolute;*/
+/*    inset: 0;*/
+/*    background: radial-gradient(*/
+/*            circle at center,*/
+/*            rgba(139, 92, 246, 0.15),*/
+/*            transparent 65%*/
+/*    );*/
+/*    pointer-events: none;*/
+/*}*/
