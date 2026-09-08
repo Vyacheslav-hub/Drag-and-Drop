@@ -35,6 +35,8 @@
     "webpack-dev-server": "^6.0.0"
   },
   "dependencies": {
-    "core-js": "^3.49.0"
+    "core-js": "^3.49.0",
+    "normalize.css": "^8.0.1",
+    "sortablejs": "^1.15.7"
   }
 }
