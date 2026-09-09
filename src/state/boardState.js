@@ -58,10 +58,35 @@ export const removeCard = (cardId) => {
 
 }
 
+export const moveCard = (cardId, fromColumnId, toColumnId, newIndex = 0) => {
+    const fromColumn = boardState.columns.find(column => column.id === fromColumnId);
+    const toColumn = boardState.columns.find(column => column.id === toColumnId);
+
+    if (!fromColumn || !toColumn) {
+        return;
+    }
+
+    const card = fromColumn.cards.find(card => card.id === cardId);
+    const cardIndex = fromColumn.cards.findIndex(card => card.id === cardId);
+
+    if (cardIndex === -1) {
+        return;
+    }
+
+    fromColumn.cards.splice(cardIndex, 1);
+    toColumn.cards.splice(newIndex, 0, card);
+
+}
+
 addCard('column-2', 'Какой-то текст для теста')
 
 removeCard('card-1');
 
-boardState.columns.forEach(column => {
-    console.log(column.cards)
+ boardState.columns.forEach(column => {
+   console.log(column.cards)
 })
+
+moveCard('card-2', 'column-1', 'column-2', 0);
+
+
+
