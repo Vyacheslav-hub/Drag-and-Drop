@@ -1,3 +1,5 @@
+import { loadBoardState } from '../storage/storage.js';
+
 export const boardState = {
     columns: [
         {
@@ -7,10 +9,12 @@ export const boardState = {
                 {
                     id: 'card-1',
                     text: 'Изучить Drag & Drop',
+                    image: null,
                 },
                 {
                     id: 'card-2',
                     text: 'Сделать домашку',
+                    image: null,
                 },
             ],
         },
@@ -29,20 +33,23 @@ export const boardState = {
     ],
 };
 
-export const addCard = (columnId, text) => {
+export const addCard = (columnId, text, image = null) => {
     const id = crypto.randomUUID();
-    const findColumn  = boardState.columns.find(column => column.id === columnId);
+    const findColumn = boardState.columns.find(column => column.id === columnId);
 
     if (!findColumn) {
         return;
     }
 
-    findColumn.cards.push({
+    const newCard = {
         id,
-        text
-    });
+        text,
+        image
+    };
 
-    // console.log(findColumn)
+    findColumn.cards.push(newCard);
+
+    return newCard;
 }
 
 export const removeCard = (cardId) => {
@@ -75,18 +82,10 @@ export const moveCard = (cardId, fromColumnId, toColumnId, newIndex = 0) => {
 
     fromColumn.cards.splice(cardIndex, 1);
     toColumn.cards.splice(newIndex, 0, card);
+};
 
+const savedState = loadBoardState();
+
+if (savedState) {
+    boardState.columns = savedState.columns;
 }
-
-addCard('column-2', 'Какой-то текст для теста')
-
-removeCard('card-1');
-
- boardState.columns.forEach(column => {
-   console.log(column.cards)
-})
-
-moveCard('card-2', 'column-1', 'column-2', 0);
-
-
-

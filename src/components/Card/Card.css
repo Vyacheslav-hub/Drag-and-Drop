@@ -1,0 +1,36 @@
+.card {
+    position: relative;
+    border-radius: 5px;
+    background-color: white;
+    padding: 10px 35px 10px 10px;
+    cursor: pointer;
+    overflow-wrap: anywhere;
+}
+
+.remove-button {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 5px;
+    background: inherit;
+    border: none;
+    font-size: 20px;
+    display: none;
+    cursor: pointer;
+}
+
+.card:hover .remove-button {
+    display: block;
+}
+
+.remove-button:hover {
+    color: red;
+}
+
+.card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 5px;
+}
