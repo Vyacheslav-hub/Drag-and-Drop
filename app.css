@@ -348,29 +348,6 @@ template {
   display: none;
 }
 
-.boards {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-    border: 5px solid black;
-}
-
-.board {
-    border: 3px solid red;
-}
-
-.container {
-    font-size: 20px;
-    list-style-type: none;
-}
-
-.card {
-    border: 1px solid green;
-    border-radius: 5px;
-    padding: 5px;
-}
-
 /*.container {*/
 /*    display: flex;*/
 /*    flex-direction: column;*/
@@ -409,4 +386,112 @@ template {
 /*    );*/
 /*    pointer-events: none;*/
 /*}*/
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    background-color: blue;
+    padding: 10px;
+}
+
+.column {
+    background-color: #dee2e5;
+    padding: 10px;
+    min-width: 0;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.add-card-button {
+    cursor: pointer;
+}
+
+.card textarea {
+    width: 100%;
+    box-sizing: border-box;
+
+    border: none;
+    outline: none;
+    resize: none;
+    overflow: hidden;
+
+    background: transparent;
+    font: inherit;
+    color: inherit;
+}
+
+.card-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.card-actions button {
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.card-actions button:first-child {
+    background: #4caf50;
+    color: white;
+}
+
+.card-actions button:last-child {
+    background: transparent;
+    font-size: 20px;
+}
+
+.card-actions button:first-child:hover {
+    color: black;
+}
+
+.card-actions button:last-child:hover {
+    color: red;
+}
+
+
+.card {
+    position: relative;
+    border-radius: 5px;
+    background-color: white;
+    padding: 10px 35px 10px 10px;
+    cursor: pointer;
+    overflow-wrap: anywhere;
+}
+
+.remove-button {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 5px;
+    background: inherit;
+    border: none;
+    font-size: 20px;
+    display: none;
+    cursor: pointer;
+}
+
+.card:hover .remove-button {
+    display: block;
+}
+
+.remove-button:hover {
+    color: red;
+}
+
+.card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 5px;
+}
 
